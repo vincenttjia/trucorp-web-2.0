@@ -6,9 +6,8 @@ exit;
 }
 $q = $link->prepare("SELECT * FROM users");
 $q->execute();
+$rowcount = $q->num_rows();
 $res = $q->get_result();
-
-$rowcount = $res->num_rows();
 
 echo "Number of rows : ".$rowcount."<br>";
 

@@ -1,0 +1,22 @@
+version: "2"
+services:
+   database:
+      image: trucorp-web-2.0-sql
+      networks:
+         - vin
+
+   webserver:
+      image: trucorp-web-2.0
+      ports:
+          - 7000:80
+      environment:
+          - DatabaseIPNetwork=database
+          - databaseUsername=root
+          - databasePassword=vincent
+      depends_on:
+          - database
+      networks:
+          - vin
+
+networks:
+    vin:

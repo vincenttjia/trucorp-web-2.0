@@ -10,7 +10,7 @@ $q->execute();
 $res = $q->get_result();
 
 //echo "Number of rows : ".$rowcount."<br>";
-vardump($res);
+var_dump($res);
 
 while($row=$res->fetch_assoc()){
 	echo var_dump($row)."<br>";
